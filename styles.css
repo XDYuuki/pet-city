@@ -69,9 +69,3 @@ Styles here
     font-size: 15px;
     margin: 0;
 }
-
-/* Media Queries */
-
-@media screen and (max-width: 1200px) {
-    /* content */
-}
