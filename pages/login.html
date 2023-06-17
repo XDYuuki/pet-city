@@ -14,6 +14,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/login-styles">
+
 </head>
 
 <body>
@@ -53,7 +55,26 @@
     </header>
     <!--End menu bar-->
 
+    <section id="login-form">
 
+        <h2 class="text-center">Log In</h2>
+        <div class="container">
+            <form action="#">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="psw" placeholder="Enter your passwork"
+                        name="contact">
+                </div>
+                <button type="submit" class="btn bg-secondary">
+                    Sign In
+                </button>
+            </form>
+        </div>
+
+    </section>
 
     <footer id="footer">
         <section>
