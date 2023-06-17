@@ -35,14 +35,17 @@
   </ol>
 </details>
 
-<!-- ![interface](web/assets/interface-example.png) -->
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+Pet City.
 
 Write something about the project.
 
+[Figma Prototype](https://www.figma.com/file/NlaVqKLlihR7KF1GhRkG8Z/Pet_City?type=design&node-id=0-1&t=gNZkuxdNxZW4sR4n-0)
 
+
+![interface](./assets/Home-landing-page-example.svg)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -73,7 +76,7 @@ Here follows the instructions to run this project in your pc.
 
 Gabriel Rocha - [@gabriellbr](https://www.linkedin.com/in/gabriellbr/) - gabriel.lbr@outlook.com
 
-Larissa Carvalho - [@lalahcarva](https://github.com/lalahcarva) - larissa@email.com
+Larissa Carvalho - [@lalahcarva](https://github.com/lalahcarva) - lalahcarva@gmail.com
 
 Project Link: [Pet City Project](https://github.com/XDYuuki/pet-city.git)
 
