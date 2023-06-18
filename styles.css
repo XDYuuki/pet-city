@@ -69,3 +69,7 @@ Styles here
     font-size: 15px;
     margin: 0;
 }
+
+.redborder {
+    border: 1px solid red;
+}
