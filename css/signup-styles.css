@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+    --purple: #9B51E0; 
+    --darkpurple: #723ba6; 
+    --inter: 'Inter', sans-serif;
+  }
+
+
+#signup-form {
+    height: 150vh;
+    width: 50%;
+}s
+
+h2 {
+    font-weight: 600;
+}
+
+.btn-styles {
+    background-color: var(--darkpurple);
+    color: white;
+    padding: 10px 15px;
+}
+
+.btn-add {
+    background-color: rgb(71, 71, 71);
+    color: white;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addimg {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 20%;
+}
