@@ -39,3 +39,7 @@ h2 {
     margin-bottom: 20px;
     width: 170px;
 }
+
+#file-ref-input{
+    display: none;
+}
