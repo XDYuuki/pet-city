@@ -18,6 +18,17 @@ class SignupView {
         this.bioInput = document.getElementById("bio-input");
     }
 
+    clearSignupFormView = () => {
+        this.petNameInput.value = "";
+        this.specieInput.value = "";
+        this.ageInput.value = "";
+        this.tutorFirstName.value = "";
+        this.tutorLastName.value = "";
+        this.emailInput.value = "";
+        this.passwprdInput.value = "";
+        this.bioInput.value = "";
+    };
+
     bindSignupUser(handler) {
         this.fileInput.addEventListener("change", (event) => {
             this.fileCatcher.file = event.target.files[0];

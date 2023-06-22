@@ -22,6 +22,8 @@ class UserrController {
                 dataUser.file
             );
 
+            this.view.clearSignupFormView();
+
             return this.loggedUserID;
         }
         return false;
