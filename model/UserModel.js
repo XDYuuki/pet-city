@@ -3,14 +3,15 @@ class UserModel {
         {
             id: 0,
             name: "",
-            species: "",
+            specie: "",
             age: 0,
             profilePictureURL: "",
             tutorFirsName: "",
             tutorlastName: "",
-            loginAccess: "",
             email: "",
             bio: "",
+            following: [],
+            followers: [],
             posts: [
                 {
                     title: "",
@@ -20,5 +21,39 @@ class UserModel {
             ],
         },
     ];
+
+    firebaseDb;
+
     constructor() {}
+
+    bindAccess(dbReference) {
+        this.firebaseDb = dbReference;
+    }
+
+    createNewPet(dataPet) {
+        let pet = {
+            petId: dataPet.id ? dataPet.id : "",
+            name: dataPet.name,
+            specie: dataPet.specie,
+            age: dataPet.age,
+            profilePictureURL: dataPet.profilePictureURL
+                ? dataPet.profilePictureURL
+                : "",
+            tutorFirstName: dataPet.tutorFirstName,
+            tutorLastName: dataPet.tutorLastName,
+            email: dataPet.email,
+            bio: dataPet.bio,
+            following: [],
+            followers: [],
+            posts: [],
+        };
+
+        return pet;
+    }
+
+    uploadFile(file) {
+        return this.firebaseStorage.uploadFile(file);
+    }
+
+    addNewPost(petId, post) {}
 }
