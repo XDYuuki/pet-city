@@ -160,8 +160,8 @@
                 <label for="tutor-lname-input">Tutor last name</label>
                 <input type="text" class="input-style" id="tutor-lname-input">
 
-                <label for=""></label>
-                <textarea name="" id="" cols="30" rows="4" class="textarea-style"></textarea>
+                <label for="bio-input">Bio</label>
+                <textarea name="bio-input" id="bio-input" cols="30" rows="4" class="textarea-style"></textarea>
 
                 <label for="email-input">e-mail:</label>
                 <input type="email" name="" id="email-input" class="input-style">
@@ -192,10 +192,17 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <script src="./firebase/FirebaseAccess.js"></script>
-    <script src="./controller/UserController.js"></script>
-    <script src="./model/UserModel.js"></script>
-    <script src="firebaseComm.js"></script>
+    <!-- Firebase Javascript -->
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script defer src="./firebase/FirebaseAccess.js"></script>
+    <script defer src="./controller/UserController.js"></script>
+    <script defer src="./model/UserModel.js"></script>
+    <script defer src="./view/SignupView.js"></script>
+    <script defer src="firebaseComm.js"></script>
 </body>
 
 </html>

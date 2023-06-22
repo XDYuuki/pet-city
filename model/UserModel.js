@@ -10,6 +10,8 @@ class UserModel {
             tutorlastName: "",
             email: "",
             bio: "",
+            following: [],
+            followers: [],
             posts: [
                 {
                     title: "",
@@ -30,15 +32,19 @@ class UserModel {
 
     createNewPet(dataPet) {
         let pet = {
-            petId: "",
+            petId: dataPet.id ? dataPet.id : "",
             name: dataPet.name,
             specie: dataPet.specie,
             age: dataPet.age,
-            profilePictureURL: "",
-            tutorFirsName: dataPet.tutorFirsName,
-            tutorlastName: dataPet.tutorlastName,
+            profilePictureURL: dataPet.profilePictureURL
+                ? dataPet.profilePictureURL
+                : "",
+            tutorFirstName: dataPet.tutorFirstName,
+            tutorLastName: dataPet.tutorLastName,
             email: dataPet.email,
             bio: dataPet.bio,
+            following: [],
+            followers: [],
             posts: [],
         };
 

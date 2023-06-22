@@ -13,11 +13,17 @@ class UserrController {
     signupHandler = (dataUser) => {
         if (dataUser) {
             let dataPet = this.model.createNewPet(dataUser);
+            console.log("Controller dataPet: ", dataPet);
             this.loggedUserID = this.firebaseAccess.signup(
                 dataPet,
                 "petPic",
-                this.model.createNewPet
+                dataUser.email,
+                dataUser.password,
+                dataUser.file
             );
+
+            return this.loggedUserID;
         }
+        return false;
     };
 }

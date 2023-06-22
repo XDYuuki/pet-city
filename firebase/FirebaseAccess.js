@@ -1,5 +1,6 @@
 const ADD_NEW_USER = true;
 const JUST_ADD_FILE = false;
+
 class FirebaseAccess {
     constructor() {
         this.firebaseConfig = {
@@ -13,26 +14,25 @@ class FirebaseAccess {
         };
 
         this.app = firebase.initializeApp(this.firebaseConfig);
-        // this.database = firebase.database();
+        //this.database = this.app.database();
 
         this.database = this.app.firestore();
         this.storage = this.app.storage();
     }
 
-    signup(userData, fbStorageBucket, callback) {
+    signup(userData, fbStorageBucket, email, password, file) {
+        console.log("firebase signup userData: ", userData);
         firebase
             .auth()
-            .createUserWithEmailAndPassword(userData.email, userData.password)
+            .createUserWithEmailAndPassword(email, password)
             .then(() => {
                 console.log("User successfully created");
                 const user = firebase.auth().currentUser;
 
-                this.uploadFile(
-                    userData,
-                    ADD_NEW_USER,
-                    fbStorageBucket,
-                    callback
-                );
+                let uploadNewPet = userData;
+                uploadNewPet.id = user.uid;
+
+                this.uploadFile(userData, ADD_NEW_USER, fbStorageBucket, file);
                 //addUserToDb(userData);
                 return user.uid;
             })
@@ -47,14 +47,27 @@ class FirebaseAccess {
 
     addUserToDb(userData) {}
 
-    uploadFile(data, shouldAddNewUser, FbStorageBucket, callback) {
-        if (data) {
-            const id = this.database.collection("petUser").doc().id;
+    setDatabaseItem = (item, collection, docID) => {
+        this.database
+            .collection(collection)
+            .doc(docID)
+            .set(item)
+            .then(() => {
+                console.log("New pet added to the database.");
+            })
+            .catch((err) => {
+                console.log("db set error: ", err);
+            });
+    };
 
-            const storageRef = storage.ref(
-                `${FbStorageBucket}/${id}.${data.file.extension}`
+    uploadFile(data, shouldAddNewUser, FbStorageBucket, file) {
+        if (data) {
+            let id = this.database.collection("petUser").doc().id;
+
+            let storageRef = this.storage.ref(
+                `${FbStorageBucket}/${id}.${file.extension}`
             );
-            const uploadTask = storageRef.put(data.file);
+            let uploadTask = storageRef.put(file.file);
 
             uploadTask.on(
                 "state_changed",
@@ -68,15 +81,23 @@ class FirebaseAccess {
                     console.log("error:", err);
                 },
                 function () {
-                    console.log("Upload is done");
                     uploadTask.snapshot.ref
                         .getDownloadURL()
                         .then((downloadURL) => {
                             let imageUrl = downloadURL;
+                            let newPet = data;
+                            newPet.profilePictureURL = downloadURL;
+                            newPet.id = id;
+
+                            console.log("Upload is done", id, downloadURL);
+                            console.log("Db Item: ", newPet);
 
                             if (shouldAddNewUser) {
-                                let newPet = callback();
-                                this.database
+                                //this.setDatabaseItem(newPet, "petUser", id);
+
+                                //this.database
+                                firebase
+                                    .firestore()
                                     .collection("petUser")
                                     .doc(id)
                                     .set(newPet)
@@ -97,4 +118,4 @@ class FirebaseAccess {
     }
 }
 
-const firebaseApp = new FirebaseAccess();
+// const firebaseApp = new FirebaseAccess();
