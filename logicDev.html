@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Pet City</title>
+    <!-- <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> -->
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        .form-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .standard-form {
+            display: flex;
+            flex-direction: column;
+            width: 45vw;
+        }
+
+        .input-style {
+            margin-bottom: 2%;
+            border-radius: 10px;
+            height: 4vh;
+        }
+
+        .textarea-style {
+            margin-bottom: 2%;
+            border-radius: 10px;
+        }
+
+        .input-file {
+            border: none;
+            background-color: none;
+        }
+
+        input.input-file {
+            display: none;
+        }
+
+        input.input-file+label {
+            background-color: #9B51E0;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            text-align: center;
+            width: 15vw;
+            /* align-self: center; */
+            margin-bottom: 2%;
+            cursor: pointer;
+            border: 2px solid black;
+        }
+
+        input.input-file+label:hover {
+            background-color: #5d3285;
+            border-color: white;
+        }
+
+        button[type="submit"] {
+            background-color: #9B51E0;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            text-align: center;
+            width: 20vw;
+            align-self: flex-end;
+            margin-bottom: 2%;
+            cursor: pointer;
+            border: 2px solid black;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #5d3285;
+            border-color: white;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        footer {
+            float: inline-end;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--Start menu bar-->
+    <header class="bg-custom">
+        <nav class="navbar p-4 navbar-expand-lg navbar-light p-nav">
+            <menu class="container-fluid">
+                <a class="navbar-brand" href="/index.html">Pet City</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav" aria-label="menu links">
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                            <div class="navbar-nav" aria-label="menu links">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/pages/aboutUs.html">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/pages/login.html">Log In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/pages/signup.html">Sign Up</a>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </menu>
+        </nav>
+    </header>
+    <!--End menu bar-->
+
+    <main>
+        <div class="form-container">
+            <form id="signup-form" class="standard-form">
+                <label for="pet-name-input">Pet name:</label>
+                <input type="text" class="input-style" id="pet-name-input">
+
+                <label for="specie-input">Specie</label>
+                <input type="text" class="input-style" id="specie-input">
+
+                <label for="age-input">age</label>
+                <input type="number" class="input-style" id="age-input">
+
+                <input type="file" name="" id="file-ref-input" class="input-file">
+                <label for="file-ref-input">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="20" fill="currentColor"
+                        class="bi bi-file-arrow-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM7.5 6.707 6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707z" />
+                    </svg>&nbsp;Pet photo:
+                </label>
+
+
+                <label for="tutor-fname-input">Tutor first name</label>
+                <input type="text" class="input-style" id="tutor-fname-input">
+
+                <label for="tutor-lname-input">Tutor last name</label>
+                <input type="text" class="input-style" id="tutor-lname-input">
+
+                <label for=""></label>
+                <textarea name="" id="" cols="30" rows="4" class="textarea-style"></textarea>
+
+                <label for="email-input">e-mail:</label>
+                <input type="email" name="" id="email-input" class="input-style">
+
+                <label for="">password</label>
+                <input type="password" name="" id="password-input" class="input-style">
+
+                <button type="submit">Create Profile</button>
+            </form>
+        </div>
+    </main>
+
+
+    <footer id="footer">
+        <section>
+            <p class="footertxt">© 2023 Pet City. All rights reserved</p>
+        </section>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="./firebase/FirebaseAccess.js"></script>
+    <script src="./controller/UserController.js"></script>
+    <script src="./model/UserModel.js"></script>
+    <script src="firebaseComm.js"></script>
+</body>
+
+</html>

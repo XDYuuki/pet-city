@@ -5,14 +5,13 @@
   <h3 align="center">Humber College</h3>
 
   <p align="center">
-    API server and frontend (HTML/CSS/Js)!
+    Web Application (Firebase usage)!
   </p>
   <p alight="center">
     Creators: Gabriel Lucas Bispo da Rocha, Larissa Carvalho Rodrigues.
   </p>
   
 </div>
-
 
 
 <!-- TABLE OF CONTENTS -->
