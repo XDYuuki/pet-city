@@ -22,6 +22,9 @@ class LoginView {
                         window.location = "profile.html";
                     }
                 });
+            } else {
+                alert("Email or Password is wrong!");
+                this.passwordInput.value = "";
             }
         });
     }
