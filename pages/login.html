@@ -40,8 +40,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="/pages/aboutUs.html">About Us</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/pages/login.html">Log In</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/pages/signup.html">Sign Up</a>
@@ -59,15 +57,16 @@
         <div class="container align-items-center">
             <h2 class="text-center">Log In</h2>
             <div class="container">
-                <form action="#">
+                <form id="login-form">
                     <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your Email" name="email">
+                        <label for="login-email-input">Email:</label>
+                        <input type="email" class="form-control" id="login-email-input" placeholder="Enter your Email"
+                            name="login-email-input">
                     </div>
                     <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" class="form-control" id="psw" placeholder="Enter your passwork"
-                            name="contact">
+                        <label for="login-password-input">Password:</label>
+                        <input type="password" class="form-control" id="login-password-input"
+                            placeholder="Enter your passwork" name="login-password-input">
                     </div>
                     <button type="submit" class="btn btn-styles">
                         Sign In
@@ -93,6 +92,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <!-- Firebase Javascript -->
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script defer src="../firebase/FirebaseAccess.js"></script>
+    <script defer src="../controller/LoginController.js"></script>
+    <script defer src="../view/LoginView.js"></script>
+    <script defer src="../initLogin.js"></script>
 </body>
 
 </html>

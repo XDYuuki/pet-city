@@ -20,8 +20,8 @@
 <body>
 
 
-    <!--Start menu bar-->
-    <header class="bg-custom">
+    <!--Start AUTH menu bar-->
+    <header class="bg-custom" id="nav-auth">
         <nav class="navbar p-4 navbar-expand-lg navbar-light p-nav">
             <menu class="container-fluid">
                 <a class="navbar-brand" href="/index.html">Pet City</a>
@@ -41,10 +41,10 @@
                                     <a class="nav-link" href="/pages/aboutUs.html">About Us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/pages/login.html">Log In</a>
+                                    <a class="nav-link" href="/pages/profile.html">Profile</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/pages/signup.html">Sign Up</a>
+                                    <a class="nav-link" href="/pages/logout.html">Log Off</a>
                                 </li>
                             </div>
                         </div>
@@ -175,6 +175,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <!-- Firebase Javascript -->
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+
+    <script defer src="../firebase/initFirebase.js"></script>
+    <script defer src="../initProfile.js"></script>
 </body>
 
 </html>

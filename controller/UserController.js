@@ -1,12 +1,12 @@
 class UserrController {
-    loggedUserID;
+    loggedUserID = undefined;
 
-    constructor(model, view, firebaseAccess) {
+    constructor(model, firebaseAccess, signupView) {
         this.model = model;
-        this.view = view;
+        this.signupView = signupView;
         this.firebaseAccess = firebaseAccess;
 
-        this.view.bindSignupUser(this.signupHandler);
+        this.signupView.bindSignupUser(this.signupHandler);
         this.model.bindAccess(this.firebaseAccess);
     }
 
@@ -22,7 +22,7 @@ class UserrController {
                 dataUser.file
             );
 
-            this.view.clearSignupFormView();
+            this.signupView.clearSignupFormView();
 
             return this.loggedUserID;
         }
