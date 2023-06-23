@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logout</title>
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyD0UlGaJPDTqjHsVyf3I38ZJ2ZK18rEE5s",
+            authDomain: "webapplicationprogrammin-2f465.firebaseapp.com",
+            projectId: "webapplicationprogrammin-2f465",
+            storageBucket: "webapplicationprogrammin-2f465.appspot.com",
+            messagingSenderId: "8290715278",
+            appId: "1:8290715278:web:9632a5c75455901e276bdf",
+            measurementId: "G-KW4J9HX7GJ",
+        };
+
+        const app = firebase.initializeApp(firebaseConfig);
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    firebase.auth().signOut();
+                } else {
+                    window.location = "/index.html";
+                }
+            });
+        });
+    </script>
+</body>
+
+
+</html>

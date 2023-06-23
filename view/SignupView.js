@@ -18,6 +18,19 @@ class SignupView {
         this.bioInput = document.getElementById("bio-input");
     }
 
+    clearSignupFormView = () => {
+        this.petNameInput.value = "";
+        this.specieInput.value = "";
+        this.ageInput.value = "";
+        this.tutorFirstName.value = "";
+        this.tutorLastName.value = "";
+        this.emailInput.value = "";
+        this.passwprdInput.value = "";
+        this.bioInput.value = "";
+    };
+
+    bindLogin() {}
+
     bindSignupUser(handler) {
         this.fileInput.addEventListener("change", (event) => {
             this.fileCatcher.file = event.target.files[0];
@@ -52,6 +65,7 @@ class SignupView {
             if (returnHandler) {
                 //window.location = "pages/profile.html";
                 console.log("View return Handler: ", returnHandler);
+                window.location = "pages/profile.html";
             }
         });
     }

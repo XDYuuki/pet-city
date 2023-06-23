@@ -42,7 +42,27 @@ class FirebaseAccess {
             });
     }
 
-    login(email, password) {}
+    login(email, password) {
+        if (email && password) {
+            firebase
+                .auth()
+                .signInWithEmailAndPassword(email, password)
+                .then(() => {
+                    const user = firebase.auth().currentUser;
+
+                    console.log("User logged in: ", user);
+                    return true;
+                })
+                .catch((err) => {
+                    console.log("err", err);
+                    return false;
+                });
+        } else {
+            alert("There is something wrong with your e-mail or password");
+            return false;
+        }
+    }
+
     logout() {}
 
     addUserToDb(userData) {}
