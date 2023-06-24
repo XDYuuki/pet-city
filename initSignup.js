@@ -6,6 +6,10 @@ const app = new UserrController(
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        window.location = "pages/profile.html";
+        document.getElementById("nav-auth").style.display = "block";
+        document.getElementById("nav-no-auth").style.display = "none";
+    } else {
+        document.getElementById("nav-auth").style.display = "none";
+        document.getElementById("nav-no-auth").style.display = "block";
     }
 });

@@ -65,7 +65,7 @@ class SignupView {
             if (returnHandler) {
                 //window.location = "pages/profile.html";
                 console.log("View return Handler: ", returnHandler);
-                window.location = "pages/profile.html";
+                window.location = "profile.html";
             }
         });
     }
