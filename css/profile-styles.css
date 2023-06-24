@@ -44,16 +44,66 @@ h1 {
 }
 
 
-.updates {
+.box {
     margin: auto;
     padding: 60px;
     width: 80%;
 }
+
    
 .purpleheading {
         color: #9B51E0;
         font-size: 18px;
         font-weight: 600;
+}
+
+#addPost {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.btn-styles {
+    background-color: rgb(71, 71, 71);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.btn-styles:hover {
+    background-color: var(--darkpurple);
+}
+
+.btnhidden {
+    display: hidden;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+
+.imgPreview {
+    height: 100px;
+    width: 100px;
+    border: 1px solid var(--purple);
+}
+
+.btnPost {
+    background-color: var(--darkpurple);
+    color: white;
+    padding: 10px 15px;
 }
 
 .card {
@@ -63,3 +113,4 @@ h1 {
     font-size: 16px;
     border-radius: 10px;
 }
+
