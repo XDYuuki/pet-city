@@ -39,7 +39,7 @@
 ## About The Project
 Pet City.
 
-Write something about the project.
+Social place for pet and their tutors 🐶😺.
 
 [Figma Prototype](https://www.figma.com/file/NlaVqKLlihR7KF1GhRkG8Z/Pet_City?type=design&node-id=0-1&t=gNZkuxdNxZW4sR4n-0)
 
