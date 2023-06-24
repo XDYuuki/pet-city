@@ -61,8 +61,7 @@
             <div class="row align-items-center">
                 <div class="col-4 profileimg">
                     <div>
-                        <img class="img-cicular" src="../assets/cat.jpg">
-
+                        <img class="img-cicular" id="pet-pic" src="../assets/img-place-holder.jpg">
                     </div>
                 </div>
                 <div class="col-8">
@@ -70,13 +69,19 @@
                         <!-- Bio Name -->
                         <div class="row">
                             <div class="col">
-                                <h3>Neném</h3>
+                                <h3><span id="pet-name">Neném</span> (<span id="pet-specie">Dog</span>)</h3>
                             </div>
                         </div>
                         <!-- Bio Description -->
                         <div class="row">
                             <div class="col">
-                                <p>Description of Pet</p>
+                                <p id="pet-bio">Description of Pet</p>
+                            </div>
+                        </div>
+                        <!-- Age -->
+                        <div class="row">
+                            <div class="col">
+                                <p><span id="pet-age">0</span> years old</p>
                             </div>
                         </div>
                         <!-- Bio row 2 -->
@@ -90,10 +95,10 @@
                         </div>
                         <!-- Bio row 3 -->
                         <div class="row">
-                            <div class="col">
+                            <div class="col" id="pet-followers">
                                 2M
                             </div>
-                            <div class="col">
+                            <div class="col" id="pet-following">
                                 234
                             </div>
                         </div>
@@ -179,9 +184,14 @@
     <!-- Firebase Javascript -->
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
 
-    <script defer src="../firebase/initFirebase.js"></script>
+    <script defer src="../controller/ProfileController.js"></script>
+    <script defer src="../view/ProfilleView.js"></script>
+    <script defer src="../firebase/FirebaseAccess.js"></script>
+    <!-- <script defer src="../firebase/initFirebase.js"></script> -->
     <script defer src="../initProfile.js"></script>
 </body>
 

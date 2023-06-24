@@ -20,6 +20,37 @@ class FirebaseAccess {
         this.storage = this.app.storage();
     }
 
+    getUserFromDb(user) {
+        let retPetUser;
+        return new Promise((resolve, reject) => {
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    console.log("user: ", user);
+
+                    firebase
+                        .firestore()
+                        .collection("petUser")
+                        // .where("petId", "==", user.uid)
+                        .doc(user.uid)
+                        .get()
+                        .then((doc) => {
+                            console.log("pet User:", doc.data());
+                            retPetUser = doc.data();
+
+                            if (retPetUser) {
+                                resolve(retPetUser);
+                            }
+                        })
+                        .catch((err) => console.log("err", err));
+                } else {
+                    reject(false);
+                    //return false;
+                }
+            });
+        });
+        //return retPetUser;
+    }
+
     signup(userData, fbStorageBucket, email, password, file) {
         console.log("firebase signup userData: ", userData);
         firebase
@@ -30,9 +61,15 @@ class FirebaseAccess {
                 const user = firebase.auth().currentUser;
 
                 let uploadNewPet = userData;
-                uploadNewPet.id = user.uid;
+                uploadNewPet.petId = user.uid;
 
-                this.uploadFile(userData, ADD_NEW_USER, fbStorageBucket, file);
+                console.log("User Data to upload: ", uploadNewPet);
+                this.uploadFile(
+                    uploadNewPet,
+                    ADD_NEW_USER,
+                    fbStorageBucket,
+                    file
+                );
                 //addUserToDb(userData);
                 return user.uid;
             })
@@ -119,7 +156,7 @@ class FirebaseAccess {
                                 firebase
                                     .firestore()
                                     .collection("petUser")
-                                    .doc(id)
+                                    .doc(newPet.petId)
                                     .set(newPet)
                                     .then(() => {
                                         console.log(
@@ -137,5 +174,3 @@ class FirebaseAccess {
         }
     }
 }
-
-// const firebaseApp = new FirebaseAccess();
